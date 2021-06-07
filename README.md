@@ -1,6 +1,6 @@
 # flutter_study
 
-Flutter study note.
+flutter study demo
 
 ## Getting Started
 
