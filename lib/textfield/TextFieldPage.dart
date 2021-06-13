@@ -4,14 +4,11 @@ class TextFieldPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final appTitle = 'TextFieldPage';
-    return MaterialApp(
-      title: appTitle,
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text(appTitle),
-        ),
-        body: MyCustomForm(),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(appTitle),
       ),
+      body: MyCustomForm(),
     );
   }
 }
