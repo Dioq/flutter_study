@@ -55,7 +55,7 @@ class _MyAppBarState extends State<MyAppBar> {
       child: AppBar(
         title: Text('标题'),
         // 左侧图标
-        leading: Icon(Icons.home),
+        leading: Icon(Icons.menu),
         //背景色
         backgroundColor: Colors.green,
         //剧中标题

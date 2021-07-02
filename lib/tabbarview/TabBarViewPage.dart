@@ -3,9 +3,7 @@ import 'package:flutter/material.dart';
 class TabBarViewPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: MyTabBarView(),
-    );
+    return MyTabBarView();
   }
 }
 
@@ -38,7 +36,7 @@ class _MyTabBarViewState extends State<MyTabBarView>
   Widget build(BuildContext context) {
     // TODO: implement build
     return SizedBox(
-      height: 500.0,
+      height: 400.0,
       child: Scaffold(
         appBar: AppBar(
           title: Text('选项卡'),
@@ -51,25 +49,12 @@ class _MyTabBarViewState extends State<MyTabBarView>
             // 是否可以滚动
             isScrollable: true,
             tabs: <Widget>[
-              Tab(
-                text: '科技',
-                icon: Icon(Icons.camera),
-              ),
-              Tab(
-                text: 'Tabs 2',
-              ),
-              Tab(
-                text: 'Tabs 3',
-              ),
-              Tab(
-                text: 'Tabs 4',
-              ),
-              Tab(
-                text: 'Tabs 5',
-              ),
-              Tab(
-                text: 'Tabs 6',
-              ),
+              Tab(text: '科技', icon: Icon(Icons.camera)),
+              Tab(text: 'Tabs 2'),
+              Tab(text: 'Tabs 3'),
+              Tab(text: 'Tabs 4'),
+              Tab(text: 'Tabs 5'),
+              Tab(text: 'Tabs 6'),
             ],
           ),
         ),
@@ -77,7 +62,7 @@ class _MyTabBarViewState extends State<MyTabBarView>
         body: TabBarView(
           controller: _tabController,
           children: <Widget>[
-            Text('选项卡1'),
+            Icon(Icons.camera),
             Text('选项卡2'),
             Text('选项卡3'),
             Text('选项卡4'),

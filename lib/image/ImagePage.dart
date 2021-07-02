@@ -8,7 +8,15 @@ class ImagePage extends StatelessWidget {
         title: Text('Image'),
       ),
       body: Center(
-        child: Image.network('https://picsum.photos/250?image=9'),
+        child: Column(
+          children: [
+            Icon(Icons.add),
+            SizedBox(height: 20),
+            Image.asset("cat.png"),
+            SizedBox(height: 20),
+            Image.network('https://picsum.photos/250?image=9'),
+          ],
+        ),
       ),
     );
   }

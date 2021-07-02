@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_study/align/AlignPage.dart';
+import 'package:flutter_study/appbar/AppBar2Page.dart';
 import 'package:flutter_study/appbar/AppBarPage.dart';
 import 'package:flutter_study/image/ImagePage.dart';
 import 'package:flutter_study/rawmaterialbutton/RawMaterialButtonPage.dart';
 import 'package:flutter_study/richtext/RichTextPage.dart';
 import 'package:flutter_study/rotatedbox/RotatedBoxPage.dart';
+import 'package:flutter_study/rowAndColumn/RowColumnPage.dart';
 import 'package:flutter_study/sizedbox/SizedBoxPage.dart';
 import 'package:flutter_study/sliverappbar/MySliverAppBarPage.dart';
 import 'package:flutter_study/snackbar/SnackBarPage.dart';
+import 'package:flutter_study/stack/StackPage.dart';
+import 'package:flutter_study/tabbarview/DefaultTabControllerPage.dart';
 import 'package:flutter_study/tabbarview/TabBarViewPage.dart';
 import 'package:flutter_study/textfield/TextFieldPage.dart';
 import 'package:flutter_study/textview/TextViewPage.dart';
@@ -19,7 +23,9 @@ import 'card/CardPage.dart';
 import 'checkbox/CheckboxPage.dart';
 import 'constrainedbox/ConstrainedBoxPage.dart';
 import 'decoratedbox/DecoratedBoxPage.dart';
+import 'decoratedbox/DecoratedPage.dart';
 import 'dropdownbutton/DropDownButtonPage.dart';
+import 'expanded/ExpandedPage.dart';
 import 'fittedbox/FittedBoxPage.dart';
 import 'floatingactionbutton/FloatingActionButtonPage.dart';
 import 'iconbutton/IconButtonPage.dart';
@@ -27,6 +33,7 @@ import 'listview/BasicListViewPage.dart';
 import 'listview/GridViewPage.dart';
 import 'listview/HorizontalListViewPage.dart';
 import 'listview/LongListViewPage.dart';
+import 'listview/load_data/ListView_loaddata.dart';
 import 'navigator/NavigatorPage.dart';
 import 'outlinebutton/OutlineButtonPage.dart';
 import 'overflowbox/OverflowBoxPage.dart';
@@ -39,6 +46,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Study',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -76,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   alignment: Alignment.centerLeft,
                   margin: EdgeInsets.symmetric(horizontal: 10),
                   height: 50,
-                  child: new Text(routers.keys.toList()[index]),
+                  child: new Text(routeLists[index]),
                 ),
               ),
             );
@@ -89,6 +97,15 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 Map<String, WidgetBuilder> routers = {
+  "Expanded": (context) {
+    return new ExpandedPage();
+  },
+  "Stack": (context) {
+    return new StackPage();
+  },
+  "Row Column": (context) {
+    return new RowColumnPage();
+  },
   "Checkbox": (context) {
     return new CheckboxPage();
   },
@@ -122,17 +139,20 @@ Map<String, WidgetBuilder> routers = {
   "FittedBox": (context) {
     return new FittedBoxPage();
   },
+  "Decorated 2": (context) {
+    return new DecoratedPage();
+  },
   "DecoratedBox": (context) {
     return new DecoratedBoxPage();
   },
   "ConstrainedBox": (context) {
     return new ConstrainedBoxPage();
   },
-  "BottomNavigationBar": (context) {
-    return new BottomNavigationBarPage();
-  },
   "TabBarView": (context) {
     return new TabBarViewPage();
+  },
+  "TabBarView 2": (context) {
+    return new TabBarView2Page();
   },
   "SnackBar": (context) {
     return new SnackBarPage();
@@ -143,11 +163,17 @@ Map<String, WidgetBuilder> routers = {
   "ButtonBar": (context) {
     return new MyButtonBar();
   },
+  "BottomNavigationBar": (context) {
+    return new BottomNavigationBarPage();
+  },
   "BottomAppBar": (context) {
     return new MyBottomAppBar();
   },
   "AppBar": (context) {
     return new AppBarPage();
+  },
+  "AppBar 2": (context) {
+    return new AppBar2Page();
   },
   "Align": (context) {
     return new AlignPage();
@@ -175,6 +201,9 @@ Map<String, WidgetBuilder> routers = {
   },
   "GridViewPage": (context) {
     return new GridViewPage();
+  },
+  "Loaddata ListView": (context) {
+    return new LoaddataPage();
   },
   "NavigatorPage": (context) {
     return new NavigatorPage();

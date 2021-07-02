@@ -15,6 +15,12 @@ class MyButtonBar extends StatelessWidget {
           // child 大小
           mainAxisSize: MainAxisSize.max,
           children: <Widget>[
+            ElevatedButton(
+              child: Text('按钮1'),
+              onPressed: () {
+                print('按钮 0');
+              },
+            ),
             RaisedButton(
                 child: Text('按钮1'),
                 color: Colors.yellowAccent,
